@@ -1274,7 +1274,9 @@ module Fluent
 
       # EC2.
       when EC2_CONSTANTS[:resource_type]
+        labels["#{EC2_CONSTANTS[:service]}/instance_id"] = @vm_id
         labels["#{EC2_CONSTANTS[:service]}/resource_name"] = @vm_name
+        labels["#{EC2_CONSTANTS[:service]}/zone"] = @zone
       end
       labels
     end
